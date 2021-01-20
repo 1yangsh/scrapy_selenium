@@ -1,12 +1,12 @@
 import scrapy
-from myscaper.items import MyscaperItem
+from myscraper.items import MyscraperItem
 from scrapy.http import Request
 
 URL = 'http://news.naver.com/main/list.nhn?mode=LS2D&mid=shm&sid1=105&sid2=230&page=%s'
 start_page = 1
 
 class MybotsSpider(scrapy.Spider):
-    name = 'mybots'
+    name = 'mybot'
     allowed_domains = ['naver.com']
     start_urls = [URL % start_page]
     
@@ -24,8 +24,8 @@ class MybotsSpider(scrapy.Spider):
         items = []
         # items에 XPATH, CSS를 통해 추출한 데이터를 저장 
         for idx in range(len(titles)):
-            item = MyscaperItem()
-            item['title'] = titles[idx]
+            item = MyscraperItem()
+            item['title'] = titles[idx].strip()
             item['writer'] = writers[idx]
             item['preview'] = previews[idx]
 
