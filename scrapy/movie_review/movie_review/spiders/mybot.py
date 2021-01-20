@@ -1,19 +1,19 @@
 import scrapy
 from movie_review.items import MovieReviewItem
-from scrapy.http import Request
+# from scrapy.http import Request
 
-URL = 'http://movie.naver.com/movie/point/af/list.nhn&page=%s'
-start_page = 1
+# URL = 'http://movie.naver.com/movie/point/af/list.nhn&page=%s'
+# start_page = 1
 
 
 class MybotSpider(scrapy.Spider):
     name = 'mybot'
     allowed_domains = ['naver.com']
-    start_urls = [URL % start_page]
+    start_urls =['http://movie.naver.com/movie/point/af/list.nhn'] # [URL % start_page]
 
-    def start_requests(self):
-        for i in range(2):  # 0 ~ 5
-            yield Request(url = URL & (i + start_page), callback=self.parse)
+    # def start_requests(self):
+    #     for i in range(2):  # 0 ~ 5
+    #         yield Request(url = URL & (i + start_page), callback=self.parse)
 
     def parse(self, response):
         titles = response.xpath(

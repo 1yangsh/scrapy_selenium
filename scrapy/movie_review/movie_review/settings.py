@@ -88,5 +88,5 @@ ROBOTSTXT_OBEY = False
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 FEED_FORMAT = "json"
-FEED_URI = "movie_review.json"
-FEED_EXPORT_ENCODING = "utf-8 sig"
+FEED_URI = "movie_reviews.json"
+FEED_EXPORT_ENCODING = "utf-8"
